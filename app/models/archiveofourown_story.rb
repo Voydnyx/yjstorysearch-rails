@@ -72,7 +72,7 @@ class ArchiveofourownStory < ApplicationRecord
     end
     return nil if formatted_crossover.blank?
     formatted_crossover = formatted_crossover.strip
-    exclude_crossovers = ["Worm"]
+    exclude_crossovers = ["Young Justice"]
     return nil if formatted_crossover.in?(exclude_crossovers)
     formatted_crossover
   end

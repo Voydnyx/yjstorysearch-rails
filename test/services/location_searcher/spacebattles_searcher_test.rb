@@ -5,7 +5,7 @@ class LocationSearcher::SpacebattlesSearcher::Test < ApplicationTestCase
     stories_html = File.read(File.expand_path("../pages/spacebattles_stories.html", __FILE__))
     stories_html = SiteCrawler::HtmlParser.parse(stories_html)
     # parse stories
-    results = searcher.update_stories_from_html!(stories_html, is_worm_story: true, chapters: false)
+    results = searcher.update_stories_from_html!(stories_html, is_yj_story: true, chapters: false)
     assert_equal(true, results[:more])
     assert_equal([30, 30, 30], [results[:stories].size, SpacebattlesStory.count, Story.count])
     # verify a story

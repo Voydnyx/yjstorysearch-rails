@@ -48,7 +48,7 @@ class FanfictionStory < ApplicationRecord
   def crossover_for_story
     return nil if !crossover?
     formatted_crossover = crossover
-    formatted_crossover = formatted_crossover.remove(/\AWorm & | & Worm\z/)
+    formatted_crossover = formatted_crossover.remove(/\AYoung Justice & | & Young Justice\z/)
     if formatted_crossover.include?("/")
       formatted_crossover = formatted_crossover.split("/").select { |part| part =~ /[A-Za-z]/ }.join("/")
     end

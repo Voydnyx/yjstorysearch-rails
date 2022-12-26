@@ -144,7 +144,7 @@ module LocationSearcher
       updated_at        = updated_on >= Date.today ? Time.zone.now : Time.at(updated_on.to_i)
       created_on        = updated_on
       active_at         = Time.parse("#{updated_on} 23:59:59")
-      exclude_tags      = ["Worm - Wildbow", "Parahumans Series - Wildbow"]
+      exclude_tags      = ["Young Justice - All Media", "Young Justice (Cartoon)"]
       crossover         = (crossover_html.css(".tag").map(&:text) - exclude_tags).first
       # attributes
       {

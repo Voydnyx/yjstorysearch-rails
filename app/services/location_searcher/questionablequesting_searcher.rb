@@ -177,7 +177,7 @@ module LocationSearcher
         # stop if story too old
         return results.call(false) if options[:active_after] && story.story_active_at < options[:active_after]
         # skip if not worm story
-        if !options.fetch(:is_worm_story) { is_worm_story?(story) }
+        if !options.fetch(:is_yj_story) { is_yj_story?(story) }
           Rails.logger.info { "Skip: #{story.title.yellow}" }
           next
         end

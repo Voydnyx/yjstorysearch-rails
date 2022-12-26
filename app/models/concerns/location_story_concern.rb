@@ -168,9 +168,9 @@ module LocationStoryConcern
 
   def universal_parse_crossover_from_title(local_title = title)
     [
-      /\(Worm ?(X|\/) ?(?<value>.*?)\)/,
-      /\[Worm ?(X|\/) ?(?<value>.*?)\]/,
-      /\{Worm ?(X|\/) ?(?<value>.*?)\}/,
+      /\(Young Justice ?(X|\/) ?(?<value>.*?)\)/,
+      /\[Young Justice ?(X|\/) ?(?<value>.*?)\]/,
+      /\{Young Justice ?(X|\/) ?(?<value>.*?)\}/,
       /\((?<value>.*?)\)/,
       /\[(?<value>.*?)\]/,
       /\{(?<value>.*?)\}/
@@ -179,7 +179,7 @@ module LocationStoryConcern
       local_title.scan(regex).flatten.each do |raw_crossover|
         if raw_crossover
           crossover = raw_crossover.split(/[^-A-Za-z0-9]/).select do |word|
-            word !~ /worm|canon/i &&
+            word !~ /young justice|canon/i &&
             word !~ /\AAlt|AU/ &&
             !word.downcase.in?(%w[ fic power fusion fanfic cross taylor pre post prepost quest a s x cross crossover ])
           end.select(&:present?).join(" ").normalize

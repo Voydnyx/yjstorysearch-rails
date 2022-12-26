@@ -38,11 +38,11 @@ module LocationSearcher
       story
     end
 
-    def is_worm_story?(story)
+    def is_yj_story?(story)
       title_words = story.title.slugify.split("_")
-      is_worm_story = (title_words & %w[ worm wormverse wormfic wormsnip taylor ]).present?
-      is_worm_story ||= title_words.any? { |title| title.starts_with?("wormx") }
-      is_worm_story
+      is_yj_story = (title_words & %w[ worm wormverse wormfic wormsnip taylor ]).present?
+      is_yj_story ||= title_words.any? { |title| title.starts_with?("wormx") }
+      is_yj_story
     end
 
     def verify_response_status!(debug_message:, status: 200)
